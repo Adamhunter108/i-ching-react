@@ -36,6 +36,12 @@ function GetHex() {
         10
     ]
 
+    // const Values = {
+    //     1: "The Creative",
+    //     2: "The Receptive",
+
+    // }
+
     const randomVal = Values[Math.floor(Math.random()*Values.length)]
 
     // if (randomVal === 1, 3, 5, 7, 9) {
@@ -46,7 +52,11 @@ function GetHex() {
 
 
     // hacky garbage
-    function refreshPage() {
+    // function refreshPage() {
+    //     window.location.reload(false);
+    // }
+    const submitHandler = (event) => {
+        event.preventDefault()
         window.location.reload(false);
     }
 
@@ -59,6 +69,8 @@ function GetHex() {
           <h1>{data.title}</h1>
       ))} */}
 
+      <h1>☯️</h1>
+
       <h1>{randomVal}</h1>
 
       <h1>{
@@ -68,11 +80,35 @@ function GetHex() {
         <h1>{
           randomVal === 2 ? 'The Receptive' : null
         }</h1>
+        <h1>{
+          randomVal === 3 ? 'Difficulty at the Beginnging' : null
+        }</h1>
+        <h1>{
+          randomVal === 4 ? 'Youthful Folly' : null
+        }</h1>
+        <h1>{
+          randomVal === 5 ? 'Waiting' : null
+        }</h1>
+        <h1>{
+          randomVal === 6 ? 'Conflict' : null
+        }</h1>
+        <h1>{
+          randomVal === 7 ? 'The Army' : null
+        }</h1>
+        <h1>{
+          randomVal === 8 ? 'Holding Together (Union)' : null
+        }</h1>
+        <h1>{
+          randomVal === 9 ? 'The Taming of the Small Power' : null
+        }</h1>
+        <h1>{
+          randomVal === 10 ? 'Treading (Conduct)' : null
+        }</h1>
 
 
 
-        {/* this is shitty code, should be emptying the state */}
-        <button onClick={refreshPage}>Refresh</button>
+        {/* this is shitty code, I think this should be emptying the state */}
+        <button onClick={submitHandler}>Refresh</button>
 
   </div>;
 }
