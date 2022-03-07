@@ -1,116 +1,72 @@
-import React from 'react';
+import React, {useState} from 'react'
+import Hex from '../HexInterpretations'
+
+
+// lets get a random number from 1 - 64
+
+// Between any two numbers
+// Math.floor(Math.random() * (max - min + 1)) + min;
+// const randoVal = Math.floor(Math.random() * (1 - 64 + 1)) + 1;
+
+// Between 0 and max (including 0)
+// Math.floor(Math.random() * (max + 1));
+// const randoVal = Math.floor(Math.random() * (4 + 1))
+
+// Between 1 and max
+// Math.floor(Math.random() * max) + 1;
+// this is the way
+// const randomValue = Math.floor(Math.random() * 64) + 1;
+
 
 
 function GetHex() {
 
-    const Hex = [
-        {
-            id: 1,
-            title: 'The Creative',
-            description: 'Quiet your mind.  Kill the noise.  Slow the frantic energy.  This Hexagram is showing you that if you make space for your creative energy, success and good fortune will follow.',
-        },
-        {
-            id: 2,
-            title: 'The Receptive',
-            description: 'This Hexagram questions if you are balanced.  Are you on the right path?  The things you do and work on, are they fueled by true motivation or are they clouded by concerns of others, desire for recognition, etc.  This is a time for gentleness, modesty, and receptiveness.',
-        },
-        {
-            id: 3,
-            title: 'Difficulty at the Beginnging',
-            description: 'One of the more straight forward Hexagrams.  This Hexagram was interpreted by ancient sages as a blade of grass trying to break through an obstacle before it sprouts out of the earth.  This Hexagram explicity calls for nonaction.  Bear the discomfort of your situation and the chaos will clear.',
-        },
+    // i ching has 64 possible outcomes
+    // const randomValue = Math.floor(Math.random() * 64) + 1
 
-    ]
+    // testing output, changed max to 10
+    const randomValue = Math.floor(Math.random() * 10) + 1
 
-
-    const Values = [
-        1, 
-        2, 
-        3, 
-        4, 
-        5, 
-        6, 
-        7, 
-        8, 
-        9, 
-        10
-    ]
-
-    // const Values = {
-    //     1: "The Creative",
-    //     2: "The Receptive",
-
-    // }
-
-    const randomVal = Values[Math.floor(Math.random()*Values.length)]
-
-    // if (randomVal === 1, 3, 5, 7, 9) {
-    //     return 'odd'
-    // } else {
-    //     return 'even'
-    // }
-
-
-    // hacky garbage
-    // function refreshPage() {
-    //     window.location.reload(false);
-    // }
-    const submitHandler = (event) => {
-        event.preventDefault()
-        window.location.reload(false);
+    const [value, setValue] = useState()
+    
+    const getHex = () => {
+        setValue(randomValue)
     }
 
+  return (
+    <div>
 
-  return <div>
+        <button onClick={getHex}>Get Hex</button>
+        <h1>{value}</h1>
 
-      {/* <h1>Hex</h1> */}
+        {/* this outputs everything from Hex */}
+        {/* {Hex.map((data) => (
+            <p>{data.id}: {data.title}, {data.description}</p>
+        ))} */}
 
-      {/* {Hex.map((data) => (
-          <h1>{data.title}</h1>
-      ))} */}
+        {/* need to match value with data.id */}
 
-      <h1>☯️</h1>
+        {/* image */}
+        {Hex.map((data) => (
+            value === data.id ? <img src={data.image} alt=''/> : null
+        ))}
 
-      <h1>{randomVal}</h1>
+        {/* gets the title */}
+        {Hex.map((data) => (
+            <h2>{
+                value === data.id ? data.title : null
+                }</h2>
+        ))}
 
-      <h1>{
-          randomVal === 1 ? 'The Creative' : null
-        }</h1>
+        {/* gets the description */}
+        {Hex.map((data) => (
+            <p>{
+                value === data.id ? data.description : null
+                }</p>
+        ))}
 
-        <h1>{
-          randomVal === 2 ? 'The Receptive' : null
-        }</h1>
-        <h1>{
-          randomVal === 3 ? 'Difficulty at the Beginnging' : null
-        }</h1>
-        <h1>{
-          randomVal === 4 ? 'Youthful Folly' : null
-        }</h1>
-        <h1>{
-          randomVal === 5 ? 'Waiting' : null
-        }</h1>
-        <h1>{
-          randomVal === 6 ? 'Conflict' : null
-        }</h1>
-        <h1>{
-          randomVal === 7 ? 'The Army' : null
-        }</h1>
-        <h1>{
-          randomVal === 8 ? 'Holding Together (Union)' : null
-        }</h1>
-        <h1>{
-          randomVal === 9 ? 'The Taming of the Small Power' : null
-        }</h1>
-        <h1>{
-          randomVal === 10 ? 'Treading (Conduct)' : null
-        }</h1>
-
-
-
-        {/* this is shitty code, I think this should be emptying the state */}
-        <button onClick={submitHandler}>Refresh</button>
-
-  </div>;
+    </div>
+  )
 }
 
-export default GetHex;
+export default GetHex
