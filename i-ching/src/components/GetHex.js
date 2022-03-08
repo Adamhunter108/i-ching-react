@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Button } from 'react-bootstrap'
 import Hex from '../HexInterpretations'
 
 
@@ -36,8 +37,9 @@ function GetHex() {
   return (
     <div>
 
-        <button onClick={getHex}>Get Hex</button>
-        <h1>{value}</h1>
+        <Button variant="outline-light" onClick={getHex}>Divinate</Button>
+        <br /><br /><br />
+        {/* <h1>{value}</h1> */}
 
         {/* this outputs everything from Hex */}
         {/* {Hex.map((data) => (
@@ -46,10 +48,17 @@ function GetHex() {
 
         {/* need to match value with data.id */}
 
+
         {/* image */}
         {Hex.map((data) => (
             value === data.id ? <img src={data.image} alt=''/> : null
         ))}
+
+        {/* hexagram number */}
+        {Hex.map((data) => (
+            value === data.id ? <p>Hexagram #: {value}</p> : null
+                ))}
+
 
         {/* gets the title */}
         {Hex.map((data) => (
