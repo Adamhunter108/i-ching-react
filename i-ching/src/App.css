@@ -7,6 +7,13 @@
   pointer-events: none;
 } */
 
+main {
+  /* min-height: 100vh; */
+  /* this is that blush gradient for WH */
+  /* background-image: linear-gradient(to bottom right, #8F4D2F, #F2B49A, #D88565, #8F4D2F); */
+  /* background-image: linear-gradient(to bottom,#000000, #000000, #456e7a); */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .Yin-Yang {
     animation: App-logo-spin infinite 20s linear;

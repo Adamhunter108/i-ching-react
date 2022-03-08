@@ -37,7 +37,13 @@ function GetHex() {
   return (
     <div>
 
-        <Button variant="outline-light" onClick={getHex}>Divinate</Button>
+        <h1><i class="fa-solid fa-yin-yang"></i></h1>
+        <p>kill the noise</p>
+
+
+
+
+        <Button variant="dark" size="lg" onClick={getHex}>Divinate</Button>
         <br /><br /><br />
         {/* <h1>{value}</h1> */}
 
@@ -56,7 +62,7 @@ function GetHex() {
 
         {/* hexagram number */}
         {Hex.map((data) => (
-            value === data.id ? <p>Hexagram #: {value}</p> : null
+            value === data.id ? <p>Hexagram # {value}</p> : null
                 ))}
 
 
@@ -73,6 +79,9 @@ function GetHex() {
                 value === data.id ? data.description : null
                 }</p>
         ))}
+
+
+
 
     </div>
   )

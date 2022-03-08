@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
 import { Container } from 'react-bootstrap'
+import Header from './components/Header';
 import HomeScreen from './screens/HomeScreen';
 import GetHex from './components/GetHex';
 import About from './screens/About';
@@ -8,6 +9,8 @@ import About from './screens/About';
 function App() {
   return (
     <div className="App">
+
+      {/* <Header /> */}
 
       <Container>
 
