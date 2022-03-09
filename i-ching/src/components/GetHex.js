@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Row, Col } from 'react-bootstrap'
 import Hex from '../HexInterpretations'
 
 
@@ -23,10 +23,10 @@ import Hex from '../HexInterpretations'
 function GetHex() {
 
     // i ching has 64 possible outcomes
-    // const randomValue = Math.floor(Math.random() * 64) + 1
+    const randomValue = Math.floor(Math.random() * 64) + 1
 
     // testing output, changed max to 10
-    const randomValue = Math.floor(Math.random() * 10) + 1
+    // const randomValue = Math.floor(Math.random() * 10) + 1
 
     const [value, setValue] = useState()
     
@@ -73,12 +73,16 @@ function GetHex() {
                 }</h2>
         ))}
 
-        {/* gets the description */}
-        {Hex.map((data) => (
-            <p>{
-                value === data.id ? data.description : null
-                }</p>
-        ))}
+        <Row className="justify-content-md-center">
+          <Col xs lg="4">
+            {/* gets the description */}
+            {Hex.map((data) => (
+                <p>{
+                    value === data.id ? data.description : null
+                    }</p>
+            ))}
+          </Col>
+        </Row>
 
 
 
