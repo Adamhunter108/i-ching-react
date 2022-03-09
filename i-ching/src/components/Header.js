@@ -33,14 +33,17 @@ function Header() {
         {/* <Offcanvas.Title id="offcanvasNavbarLabel">Offcanvas</Offcanvas.Title> */}
       </Offcanvas.Header>
       <Offcanvas.Body>
+
         <Nav className="justify-content-end flex-grow-1 pe-3">
-            {/* <LinkContainer to='/'>
-                <Nav.Link>Home</Nav.Link>
-            </LinkContainer> */}
-            
-            <LinkContainer class="btn-close text-reset" to='/about'>
-                <Nav.Link>About</Nav.Link>
+
+            <LinkContainer to='/'>
+                <Nav.Link className="linkText"><h3>Home</h3></Nav.Link>
             </LinkContainer>
+            
+            <LinkContainer to='/about'>
+                <Nav.Link className="linkText"><h3>About</h3></Nav.Link>
+            </LinkContainer>
+            
           {/* <Nav.Link href="#action1">Home</Nav.Link>
           <Nav.Link href="#action2">Link</Nav.Link> */}
           {/* <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">

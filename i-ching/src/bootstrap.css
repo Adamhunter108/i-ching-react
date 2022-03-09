@@ -11,7 +11,10 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+ /* oiriginal */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=Lexend:wght@300&family=Questrial&family=Rock+Salt&display=swap');
 :root {
   --bs-blue: #2a9fd6;
   --bs-indigo: #6610f2;
@@ -55,7 +58,8 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 173, 175, 174;
   --bs-body-bg-rgb: 6, 6, 6;
-  --bs-font-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* --bs-font-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; */
+  --bs-font-sans-serif: Questrial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -76,6 +80,11 @@
   :root {
     scroll-behavior: smooth;
   }
+}
+
+
+.linkText { 
+  color: white ; 
 }
 
 body {
@@ -248,12 +257,12 @@ sup {
 }
 
 a {
-  color: #2a9fd6;
+  color: #ffffff;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #227fab;
+  color: #ffffff;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {

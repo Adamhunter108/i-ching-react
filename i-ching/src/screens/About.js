@@ -2,10 +2,12 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
 
 function About() {
   return (
     <div>
+        <Header />
 
     {/* <LinkContainer to='/'>
         <Button size="sm" variant="light">Back</Button>
@@ -29,9 +31,9 @@ function About() {
 
         </Card.Text>
 
-        <LinkContainer to='/'>
+        {/* <LinkContainer to='/'>
             <Button size="sm" variant="light">Back</Button>
-        </LinkContainer>
+        </LinkContainer> */}
     </Card>
 
 
