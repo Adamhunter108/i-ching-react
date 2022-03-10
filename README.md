@@ -1,7 +1,7 @@
 # ☯️ I Ching React  ⚛️
 
 ### `About:`
-A React web-app for getting a daily I Ching reading.
+A React web-app for getting a daily I Ching reading and sharing your results.
 
 ---
 ### `View Live:`
