@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Button, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Hex from '../HexInterpretations'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
@@ -26,17 +27,24 @@ function GetHex() {
           setIsCopied(true);
           setTimeout(() => {
             setIsCopied(false);
-          }, 1500);
+          }, 2500);
         }
+
+    // none of these work, it would be cool to geta  working link copied to clipboard...
+    // const appLink = "<a href={https://bookofchanges.app}>bookofchanges.app</a>"
+    // const appLink = { href: 'https://bookofchanges.app' }
+    // const appLink = ('a', { href: 'https://bookofchanges.app' }, 'bookofchanges.app');
+    // const appLink = React.createElement('a', { href: 'https://bookofchanges.app' }, 'bookofchanges.app')
 
   return (
     <div>
 
-        <h1><i class="fa-solid fa-yin-yang"></i></h1>
+        <Link to='/'><h1><i class="fa-solid fa-yin-yang"></i></h1></Link>
         <p>kill the noise</p>
 
-        <Button variant="dark" size="lg" onClick={getHex}>Divinate</Button>
-        <br /><br /><br />
+        {/* button moved to bottom */}
+        {/* <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button> */}
+        <br /><br />
 
         {/* <h1>{value}</h1> */}
 
@@ -84,15 +92,19 @@ function GetHex() {
               <CopyToClipboard text={`My Daily I Ching reading is 
     Hexagram ${data.id} 
     ${data.title}
-    ☯️ ☯️ ☯️ ☯️ ☯️ ☯️`}>
-              <Button variant="outline-success" onClick={handleCopyClick}>
+☯️ ☯️ ☯️ ☯️ ☯️ ☯️ ☯️ 
+bookofchanges.app`}>
+              {/* <Button variant="outline-success" onClick={handleCopyClick}>
                 <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
-              </Button>
+              </Button> */}
+              {isCopied ?  <Button variant="outline-success" onClick={handleCopyClick}>Copied! Paste anywhere <i class="fa-solid fa-paste"></i></Button> 
+              : <Button variant="outline-success" onClick={handleCopyClick}>Share reading  <i class="fa-solid fa-share-nodes"></i></Button>}
             </CopyToClipboard> : null
         ))}
-        {/* the crazy formatting in the share button is due to the template literals */}
+        {/* the crazy formatting in the CopyToClipboard component is due to the template literals */}
 
-
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        {value ? null : <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button>}
     </div>
   )
 }

@@ -13,12 +13,11 @@ function CopyToClipboard({ copyText }) {
     }
   }
 
-  // onClick handler function for the copy button
   const handleCopyClick = () => {
-    // Asynchronously call copyTextToClipboard
+    // asynchronously call copyTextToClipboard
     copyTextToClipboard(copyText)
       .then(() => {
-        // If successful, update the isCopied state value
+        // if successful, update the isCopied state value
         setIsCopied(true);
         setTimeout(() => {
           setIsCopied(false);
@@ -31,7 +30,6 @@ function CopyToClipboard({ copyText }) {
 
   return (
     <div>
-      {/* Bind our handler function to the onClick button property */}
       <Button variant="outline-success" onClick={handleCopyClick}>
         <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
       </Button>
