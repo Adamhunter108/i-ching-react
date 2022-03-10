@@ -78,13 +78,6 @@ function GetHex() {
         </Row>
 
         {/* share button */}
-
-    {/* <CopyToClipboard text="balls">
-          <Button variant="outline-success" onClick={handleCopyClick}>
-            <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
-          </Button>
-        </CopyToClipboard> */}
-
         {Hex.map((data) => (
             value === data.id ? 
               // <CopyToClipboard text={data.title}>
@@ -97,8 +90,7 @@ function GetHex() {
               </Button>
             </CopyToClipboard> : null
         ))}
-
-{/* the crazy formatting in the share button is due to the template literals */}
+        {/* the crazy formatting in the share button is due to the template literals */}
 
 
     </div>
