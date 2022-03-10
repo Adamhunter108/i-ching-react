@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Row, Col } from 'react-bootstrap'
 import Hex from '../HexInterpretations'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 
@@ -17,6 +18,16 @@ function GetHex() {
     const getHex = () => {
         setValue(randomValue)
     }
+
+    // this is for the share button
+    const [isCopied, setIsCopied] = useState(false);
+
+    const handleCopyClick = () => {
+          setIsCopied(true);
+          setTimeout(() => {
+            setIsCopied(false);
+          }, 1500);
+        }
 
   return (
     <div>
@@ -66,7 +77,28 @@ function GetHex() {
           </Col>
         </Row>
 
+        {/* share button */}
 
+    {/* <CopyToClipboard text="balls">
+          <Button variant="outline-success" onClick={handleCopyClick}>
+            <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
+          </Button>
+        </CopyToClipboard> */}
+
+        {Hex.map((data) => (
+            value === data.id ? 
+              // <CopyToClipboard text={data.title}>
+              <CopyToClipboard text={`My Daily I Ching reading is 
+    Hexagram ${data.id} 
+    ${data.title}
+    ☯️ ☯️ ☯️ ☯️ ☯️ ☯️`}>
+              <Button variant="outline-success" onClick={handleCopyClick}>
+                <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
+              </Button>
+            </CopyToClipboard> : null
+        ))}
+
+{/* the crazy formatting in the share button is due to the template literals */}
 
 
     </div>
