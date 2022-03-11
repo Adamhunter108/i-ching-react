@@ -3,6 +3,7 @@ import { Button, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Hex from '../HexInterpretations'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import ParticlesBg from 'particles-bg'
 
 
 
@@ -38,6 +39,10 @@ function GetHex() {
 
   return (
     <div>
+
+{value ? <ParticlesBg color="#29EEC6" num={25} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={35} type="cobweb" bg={true} />}
+        {/* {value ? <ParticlesBg color="#292A30" num={50} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} />} */}
+        {/* <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} /> */}
 
         <Link to='/'><h1><i class="fa-solid fa-yin-yang"></i></h1></Link>
         <p>kill the noise</p>
