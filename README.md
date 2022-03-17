@@ -18,13 +18,15 @@ A React web-app for getting a daily I Ching reading and sharing your results.
 
 #### `Requirements:`
 
-* Node.js (v14 or higher)  <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" width="25" height="25"/>
+* Node.js <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" width="25" height="25"/>
 
 ```bash
 $ # change into i-ching directory
 $ cd i-ching
+$
 $ # install dependencies
 $ npm i
+$
 $ # start node.js server
 $ npm start
 ```
