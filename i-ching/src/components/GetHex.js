@@ -12,12 +12,9 @@ function GetHex() {
     // i ching has 64 possible outcomes
     const randomValue = Math.floor(Math.random() * 64) + 1
 
-    // testing output, changed max to 10
-    // const randomValue = Math.floor(Math.random() * 10) + 1
-
     const [value, setValue] = useState()
     
-    const getHex = () => {
+    const handleDivinateClick = () => {
         setValue(randomValue)
     }
 
@@ -31,7 +28,7 @@ function GetHex() {
           }, 2500);
         }
 
-    // none of these work, it would be cool to geta  working link copied to clipboard...
+    // none of these work, it would be cool to get a working link copied to clipboard...
     // const appLink = "<a href={https://bookofchanges.app}>bookofchanges.app</a>"
     // const appLink = { href: 'https://bookofchanges.app' }
     // const appLink = ('a', { href: 'https://bookofchanges.app' }, 'bookofchanges.app');
@@ -40,17 +37,16 @@ function GetHex() {
   return (
     <div>
 
-        {value ? <ParticlesBg color="#29EEC6" num={25} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={35} type="cobweb" bg={true} />}
-        {/* {value ? <ParticlesBg color="#292A30" num={50} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} />} */}
-        {/* <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} /> */}
+        {/* if there is a value change particle background to blue and reduce amount*/}
+        {value ? 
+        <ParticlesBg color="#29EEC6" num={25} type="cobweb" bg={true} />
+         : <ParticlesBg color="#838383" num={35} type="cobweb" bg={true} />}
+
 
         <Link to='/'><h1><i class="fa-solid fa-yin-yang"></i></h1></Link>
-        {/* <p>kill the noise</p> */}
+
         {value ? null : <p>kill the noise</p>}
 
-        {/* button moved to bottom */}
-        {/* <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button> */}
-        {/* <br /><br /> */}
 
         {/* <h1>{value}</h1> */}
 
@@ -59,26 +55,23 @@ function GetHex() {
             <p>{data.id}: {data.title}, {data.description}</p>
         ))} */}
 
+        {/* match value with data.id */}
 
-        {/* need to match value with data.id */}
 
-
-        {/* trigrams */}
+        {/* gets the trigrams */}
         {Hex.map((data) => (
             value === data.id ? <p>{data.upper} over {data.lower}</p> : null
                 ))}
 
-        {/* image */}
+        {/* gets the image */}
         {Hex.map((data) => (
             value === data.id ? <img src={data.image} alt=''/> : null
         ))}
 
-        {/* hexagram number */}
+        {/* gets hexagram number */}
         {Hex.map((data) => (
             value === data.id ? <p>Hexagram # {value}</p> : null
                 ))}
-
-
 
         {/* gets the title */}
         {Hex.map((data) => (
@@ -87,7 +80,7 @@ function GetHex() {
                 }</h2>
         ))}
 
-        {/* gets the description and contained with Bootstrap */}
+        {/* gets the description and is contained with Bootstrap */}
         <Row className="justify-content-md-center">
           <Col xs lg="4">
             {Hex.map((data) => (
@@ -101,23 +94,21 @@ function GetHex() {
         {/* share button */}
         {Hex.map((data) => (
             value === data.id ? 
-              // <CopyToClipboard text={data.title}>
               <CopyToClipboard text={`My Daily I Ching reading is 
     Hexagram ${data.id} 
     ${data.title}
 ☯️ ☯️ ☯️ ☯️ ☯️ ☯️ ☯️ 
 bookofchanges.app`}>
-              {/* <Button variant="outline-success" onClick={handleCopyClick}>
-                <span>{isCopied ? 'Hex copied to clipboard' : 'Share Your Hex'}</span>
-              </Button> */}
-              {isCopied ?  <Button variant="outline-success" onClick={handleCopyClick}>Copied! Paste anywhere <i class="fa-solid fa-paste"></i></Button> 
+
+              {isCopied ?
+                <Button variant="outline-success" onClick={handleCopyClick}>Copied! Paste anywhere <i class="fa-solid fa-paste"></i></Button> 
               : <Button variant="outline-success" onClick={handleCopyClick}>Share reading  <i class="fa-solid fa-share-nodes"></i></Button>}
             </CopyToClipboard> : null
         ))}
         {/* the crazy formatting in the CopyToClipboard component is due to the template literals */}
 
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        {value ? null : <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button>}
+        {value ? null : <Button variant="dark" size="lg" onClick={handleDivinateClick}>☽ Divinate ☾</Button>}
     </div>
   )
 }
