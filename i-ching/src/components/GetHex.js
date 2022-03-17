@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Button, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Hex from '../HexInterpretations'
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import ParticlesBg from 'particles-bg'
 
 
