@@ -40,16 +40,17 @@ function GetHex() {
   return (
     <div>
 
-{value ? <ParticlesBg color="#29EEC6" num={25} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={35} type="cobweb" bg={true} />}
+        {value ? <ParticlesBg color="#29EEC6" num={25} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={35} type="cobweb" bg={true} />}
         {/* {value ? <ParticlesBg color="#292A30" num={50} type="cobweb" bg={true} /> : <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} />} */}
         {/* <ParticlesBg color="#838383" num={50} type="cobweb" bg={true} /> */}
 
         <Link to='/'><h1><i class="fa-solid fa-yin-yang"></i></h1></Link>
-        <p>kill the noise</p>
+        {/* <p>kill the noise</p> */}
+        {value ? null : <p>kill the noise</p>}
 
         {/* button moved to bottom */}
         {/* <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button> */}
-        <br /><br />
+        {/* <br /><br /> */}
 
         {/* <h1>{value}</h1> */}
 
@@ -62,6 +63,11 @@ function GetHex() {
         {/* need to match value with data.id */}
 
 
+        {/* trigrams */}
+        {Hex.map((data) => (
+            value === data.id ? <p>{data.upper} over {data.lower}</p> : null
+                ))}
+
         {/* image */}
         {Hex.map((data) => (
             value === data.id ? <img src={data.image} alt=''/> : null
@@ -71,6 +77,8 @@ function GetHex() {
         {Hex.map((data) => (
             value === data.id ? <p>Hexagram # {value}</p> : null
                 ))}
+
+
 
         {/* gets the title */}
         {Hex.map((data) => (
@@ -108,7 +116,7 @@ bookofchanges.app`}>
         ))}
         {/* the crazy formatting in the CopyToClipboard component is due to the template literals */}
 
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         {value ? null : <Button variant="dark" size="lg" onClick={getHex}>☽ Divinate ☾</Button>}
     </div>
   )
