@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Offcanvas, Navbar, Nav, Container, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Offcanvas, Navbar, Nav, Container, Dropdown, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Link } from 'react-router-dom'
 
@@ -39,7 +39,7 @@ function Header() {
             <LinkContainer to='/'>
                 <Nav.Link className="linkText"><h3>Home</h3></Nav.Link>
             </LinkContainer>
-            
+            <Dropdown.Divider />
             <LinkContainer to='/about'>
                 <Nav.Link className="linkText"><h3>About</h3></Nav.Link>
             </LinkContainer>
