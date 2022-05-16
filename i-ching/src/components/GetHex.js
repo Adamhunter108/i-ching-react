@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Hex from '../HexInterpretations'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import ParticlesBg from 'particles-bg'
+import ShareButton from './ShareButton'
 
 
 
@@ -92,7 +93,7 @@ function GetHex() {
         </Row>
 
         {/* share button */}
-        {Hex.map((data) => (
+        {/* {Hex.map((data) => (
             value === data.id ? 
               <CopyToClipboard text={`My Daily I Ching reading is 
     Hexagram ${data.id} 
@@ -104,8 +105,11 @@ bookofchanges.app`}>
                 <Button variant="outline-success" onClick={handleCopyClick}>Copied! Paste anywhere <i class="fa-solid fa-paste"></i></Button> 
               : <Button variant="outline-success" onClick={handleCopyClick}>Share reading  <i class="fa-solid fa-share-nodes"></i></Button>}
             </CopyToClipboard> : null
-        ))}
+        ))} */}
         {/* the crazy formatting in the CopyToClipboard component is due to the template literals */}
+
+
+        {value ? <ShareButton /> : null}
 
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         {value ? null : <Button variant="dark" size="lg" onClick={handleDivinateClick}>☽ Divinate ☾</Button>}
