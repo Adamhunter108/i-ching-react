@@ -1,3 +1,8 @@
+## ⚠️ ***NOTE*** ⚠️
+> This repository has been deprecated.  The current version of this project can be found at [github.com/adamhunter108/i-ching-typescript](https://github.com/Adamhunter108/i-ching-typescript)
+---
+---
+
 # ☯️ I Ching React  ⚛️
 
 ### `About:`
